@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% comment %} Load Style rules {% endcomment %}
+    {% load static %}
+    {% comment %} Link Style Rules {% endcomment %}
+    <link rel="stylesheet" href="{% static 'oldschool_personal_blog/styles.css' %}">
+
+    <title>Post Creation</title>
+</head>
+
+<body>
+
+    <h1>Create a post</h1>
+
+    {% comment %} Post creation form {% endcomment %}
+    <form method='post'>
+
+        {% comment %} CSRF token for security {% endcomment %}
+        {% csrf_token %}
+
+        <label for="post_title">Title:</label>
+        {% comment %} Post title field {% endcomment %}
+        <input type="text" id="post_title" name="post_title" required>
+        <br>
+
+        <label for="post_text">Text:</label>
+        {% comment %} Post text field {% endcomment %}
+        <textarea id="post_text" name="post_text" required></textarea>
+        <br>
+
+        {% comment %} Form submission {% endcomment %}
+        <button type="submit">Submit Post</button>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% comment %} Load Style rules {% endcomment %}
+    {% load static %}
+    {% comment %} Link Style Rules {% endcomment %}
+    <link rel="stylesheet" href="{% static 'oldschool_personal_blog/styles.css' %}">
+
+    <title>Post Creation</title>
+</head>
+
+<body>
+
+    <h2>Sign up</h2>
+    {% comment %} Sign-up form {% endcomment %}
+    <form method="post">
+    {% comment %} CSRF token for security {% endcomment %}
+    {% csrf_token %}
+    {% comment %} Render form fields {% endcomment %}
+    {{ form }}
+    {% comment %} Form submission {% endcomment %}
+    <button type="submit">Sign Up</button>
+
+    </form>
+
+</body>
+</html>

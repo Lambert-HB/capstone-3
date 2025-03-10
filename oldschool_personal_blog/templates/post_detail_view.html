@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% comment %} Load Style rules {% endcomment %}
+    {% load static %}
+    {% comment %} Link Style Rules {% endcomment %}
+    <link rel="stylesheet" href="{% static 'oldschool_personal_blog/styles.css' %}">
+
+    <title>Post Creation</title>
+</head>
+
+<body>
+
+    {% comment %} Post title display {% endcomment %}
+    <h1>{{ post.post_title }}</h1>
+    {% comment %} post text display {% endcomment %}
+    <p>{{ post.post_text }}</p>
+    {% comment %} Post creation date/time display {% endcomment %}
+    <p>Published: {{ post.created_at }}</p>
+
+    <br><br>
+
+    {% comment %} Post list form/button {% endcomment %}
+    <form action="{% url 'blog:post_list_view' %}" method="post">
+        {% comment %} CSRF token for security {% endcomment %}
+        {% csrf_token %}
+        {% comment %} Form submission {% endcomment %}
+        <button type="submit">Back home</button>
+    </form>
+    <br><br>
+
+    {% comment %} Create post form/button {% endcomment %}
+    <form action="{% url 'blog:create_post' %}" method="post">
+        {% comment %} CSRF token for security {% endcomment %}
+        {% csrf_token %}
+        {% comment %} Form submission {% endcomment %}
+        <button type="submit">Create a new Post</button>
+    </form>
+
+</body>
+</html>

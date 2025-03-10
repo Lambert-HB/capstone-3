@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% comment %} Load Style rules {% endcomment %}
+    {% load static %}
+    {% comment %} Link Style Rules {% endcomment %}
+    <link rel="stylesheet" href="{% static 'oldschool_personal_blog/styles.css' %}">
+
+    <title>Post Creation</title>
+</head>
+
+    <body>
+        <h1>Posts by publish date:</h1>
+        {% comment %} Check user authentication {% endcomment %}
+        {% if user.is_authenticated %}
+
+        <ul>
+            {% comment %} For loop for all posts ordered by creation date/time {% endcomment %}
+            {% for post in post_list %}
+            <li>
+                <h2>
+                    {% comment %} Post info linked via primary key {% endcomment %}
+                    <a href="{% url 'blog:post_detail_view' post.pk %}">
+                    {% comment %} Post title display {% endcomment %}
+                        {{ post.post_title }}</a>
+                </h2>
+
+                {% comment %} Post date display {% endcomment %}
+                <p>Published:{{ post.created_at }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+
+        {% comment %} User greeting {% endcomment %}
+            Hi {{ user.username }}!
+            {% comment %} Log-out form/button {% endcomment %}
+            <form action="{% url 'logout' %}" method="post">
+            {% comment %} CSRF token for security {% endcomment %}
+            {% csrf_token %}
+            {% comment %} Form submission {% endcomment %}
+            <button type="submit">Log Out</button>
+            </form>
+            <br><br>
+
+            {% comment %} Sign-up form/button {% endcomment %}
+            <form action="{% url 'accounts:signup' %}" method="post">
+                {% comment %} CSRF token for security {% endcomment %}
+                {% csrf_token %}
+                {% comment %} Form submission {% endcomment %}
+                <button type="submit">Sign Up</button>
+                </form>
+                <br><br>
+
+            {% comment %} Post creation form/button {% endcomment %}
+            <form action="{% url 'blog:create_post' %}" method="post">
+                {% comment %} CSRF token for security {% endcomment %}
+                {% csrf_token %}
+                {% comment %} Form submission {% endcomment %}
+                <button type="submit">Create a new Post</button>
+            </form>
+            <br><br>
+
+        {% comment %} If User not Authenticated {% endcomment %}
+        {% else %}
+
+        {% comment %} Log-in form/button {% endcomment %}
+        <form action="{% url 'login' %}" method="post">
+            {% comment %} CSRF token for security {% endcomment %}
+            {% csrf_token %}
+            {% comment %} Form submission {% endcomment %}
+            <button type="submit">Log in</button>
+            </form>
+            <br><br>
+
+        {% comment %} Sign-up form/button {% endcomment %}
+        <form action="{% url 'accounts:signup' %}" method="post">
+            {% comment %} CSRF token for security {% endcomment %}
+            {% csrf_token %}
+            {% comment %} Form submission {% endcomment %}
+            <button type="submit">Sign Up</button>
+            </form>
+            <br><br>
+
+        {% endif %}
+    </body>
+
+</html>
