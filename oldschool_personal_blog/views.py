@@ -65,6 +65,21 @@ def post_list_view(request):
 
 # Detailed view of specified post
 def post_detail_view(request, post_id):
+    """
+    Display a detailed view of a specific blog post.
+
+    This function retrieves a blog post by it's post_id as a primary key.
+    If the post is found it renders 'post_detail_view.html', else iot throws
+    a 404 Error.
+
+    Args:
+        request (HttpResponse): HTTP Request object
+        post_id (int): Primary key for blog post to be found and displayed.
+
+    Returns:
+        HttpResponse: Returns a rendered template with the specified blog post
+        , or throws an 404 Error if post is not found.
+    """
     # Find BlogPost object by post_id as primary key or return 404 error
     post = get_object_or_404(BlogPost, pk=post_id)
     # Render template for detailed view of post
