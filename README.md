@@ -40,23 +40,18 @@ log in to the website, view a list of posts ordered by creation date and create 
     
     python manage.py runserver
     
-3. Open your web browser and navigate to `http://127.0.0.1:8000`.
+3. Open your web browser and navigate to 'http://127.0.0.1:8000/' or 'http://127.0.0.1:8000'.
 
 ## Features
-- Register for a user account
-- View posts by yourself and other users 
-- Make posts to be viewed by yourself and other users
-- View a lis of all posts by all users ordered by date of creation 
-
-## Contributing
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature-name`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/your-feature-name`).
-5. Open a Pull Request.
+- Register for a user account.
+- View posts by yourself and other users.
+- Make posts to be viewed by yourself and other users.
+- View a list of all posts by all users ordered by date of creation.
 
 ## License
 [This project is licensed under the MIT License - see the LICENSE file for details.]
+https://mit-license.org/
 
 ## Acknowledgements
-- [Credit or references to helpful resources.]
+- Lambert Badenhorst
+- HyperionDev
