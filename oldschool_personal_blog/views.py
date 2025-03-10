@@ -43,6 +43,20 @@ def create_post(request):
 
 # List view of all posts
 def post_list_view(request):
+    """
+    Display a list view of all blog posts ordered by date and time of creation
+
+    This function retrieves all BlogPost objects from the database,
+    and orders them from newest to oldest
+    It uses post_list_view.html as view template.
+
+    Args:
+        request (HttpResponse): HTTP Request object
+
+    Returns:
+        HttpResponse : A response containing the rendered template of
+        list of blog posts.
+    """
     # Create a list of BlogPost objects ordered by creation time
     post_list = BlogPost.objects.all().order_by('-created_at')
     # Render template for list view of posts
