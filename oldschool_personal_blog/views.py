@@ -4,6 +4,23 @@ from .models import BlogPost
 
 # Create a new blog post
 def create_post(request):
+    """
+    Handle the creation of a new blog post.
+
+    This function receives a POST request and processes it to create a new
+    blog pos
+    It receives post title and post text from the request, confirms that
+    they exist,
+    and then uses them to create a new BlogPost object which is then saved.
+    Finally, it redirects to post list view template.
+
+    Args:
+        request (HttpRequest): HTTP Request object
+
+    Returns:
+        HttpResponse: Redirect to post list view if post was successfully
+        created or render create post template if Request ,method is not POST.
+    """
     # Check if method is POST
     if request.method == 'POST':
         # Retrieve post title and text from request
