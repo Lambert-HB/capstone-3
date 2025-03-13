@@ -7,11 +7,11 @@ log in to the website, view a list of posts ordered by creation date and create 
 ## Installation
 1. Clone the repository:
     
-    git clone [git clone https://github.com/Lambert-HB/capstone-3]
+    git clone git clone https://github.com/Lambert-HB/capstone-3
     
 2. Navigate to the project directory:
     
-    cd [repository directory]
+    cd [repository directory] (Default directory name is "capstone")
     
 3. Create a virtual environment:
     
