@@ -18,6 +18,11 @@ RUN pip install -r requirements.txt
 # Copy the entire project
 COPY . /app/
 
+# 
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+
+
 # Expose the port on which the Django app will run
 EXPOSE 8000
 

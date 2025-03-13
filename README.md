@@ -7,7 +7,7 @@ log in to the website, view a list of posts ordered by creation date and create 
 ## Installation
 1. Clone the repository:
     
-    git clone [repository URL]
+    git clone [git clone https://github.com/Lambert-HB/capstone-3]
     
 2. Navigate to the project directory:
     
@@ -32,15 +32,8 @@ log in to the website, view a list of posts ordered by creation date and create 
     
 
 ## Usage
-1. Apply the migrations:
-    
-    python manage.py migrate
-    
-2. Start the development server:
-    
-    python manage.py runserver
-    
-3. Open your web browser and navigate to 'http://127.0.0.1:8000/' or 'http://127.0.0.1:8000'.
+
+1. Open your web browser and navigate to 'http://127.0.0.1:8000/' or 'http://127.0.0.1:8000'.
 
 ## Features
 - Register for a user account.
