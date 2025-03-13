@@ -33,7 +33,7 @@ log in to the website, view a list of posts ordered by creation date and create 
 
 ## Usage
 
-1. Open your web browser and navigate to 'http://127.0.0.1:8000/' or 'http://127.0.0.1:8000'.
+1. Open your web browser and navigate to 'http://localhost:8000' or 'http://127.0.0.1:8000/'.
 
 ## Features
 - Register for a user account.
